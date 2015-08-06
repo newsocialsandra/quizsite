@@ -8,6 +8,6 @@ def quiz(request):
 def question(request):
 	return render(request, "quiz/monstermastaren1.html")
 def completed(request):
-	return render(request, "quiz/resultat_monstermastaren.html")
+	return render(request, "quiz/resultat.html")
 def random(request):
 return render(request, "quiz/random.html")
