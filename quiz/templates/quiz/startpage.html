@@ -19,19 +19,10 @@
 <br>
 <h2>Välj ett quiz:</h2>
 {% for quiz_slug, quiz in quizzes.items %}
-     <p><a href="{% url "quiz_page" quiz_slug %}">
+     <p><li><a href="{% url "quiz_page" quiz_slug %}">
     {{ quiz.name }}
-  </a></p>
+  </a></li></p>
 {% endfor %}
-<div class="quizlist"
-<ul>
-  <li><a href="monstermastaren.html">Mönstermästaren</a> (bildquiz)</li>
-  <li><a href="LINK">Nosa rätt på djuret</a> (bildquiz)</li>
-  <li><a href="LINK">Alla tassarna på jorden</a> (bildquiz)</li>
-  <li><a href="LINK">Vad säger räven?</a> (ljudquiz)</li>
-  <li><a href="LINK">Kvitt-kvitt-kvivitt-kvitt</a> (ljudquiz)</li>
-</ul>
-</div>
 <br>
 <img src="/static/flamingo.jpg" alt="Pink flamingos" width="600">
 <br>

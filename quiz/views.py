@@ -3,17 +3,23 @@
 from django.shortcuts import render
 
 quizzes = {
-	"klassiker": {
-   		"name": u"Klassiska böcker",
-	   	"description": u"Hur bra kan du dina klassiker?"
+	"monstermastaren": {
+   		"name": u"Mönstermästaren",
+	   	"description": u"Känn igen djuret på dess mönster."
 	},
-	"fotboll": {
-	   	"name": u"Största fotbollslagen",
-	   	"description": u"Kan du dina lag?"
+	"nosa": {
+	   	"name": u"Nosa rätt på djuret",
+	   	"description": u"Vem gömmer sig bakom nosen, näsan eller näbben?"
 	},
-	"kanda-hackare": {
-	    	"name": u"Världens mest kända hackare",
-	    	"description": u"Hackerhistoria är viktigt, kan du den?"	},
+	"tassar": {
+	    "name": u"Alla tassarna på jorden",
+	    "description": u"Kan du se vem fötterna tillhör?"	},
+	"raven": {
+	    "name": u"Vad säger räven?",
+	    "description": u"Lyssna på djurens läten och gissa vem som är vem."	},
+	"kvittkvitt": {
+	    "name": u"Kvitt-kvitt-kvivitt-kvitt",
+	    "description": u"Kan du känna igen fågelsången?"	},
 }
 
 # Create your views here.
@@ -31,10 +37,10 @@ def quiz(request, slug):
 def question(request, slug, number):
 	context = {
 		"question_number": number,
-		"question": u"Hur många bultar har ölandsbron?",
-		"answer1": u"12",
-	   	"answer2": u"66 400",
-	    "answer3": u"7 428 954",
+		"question": u"Vem går klädd i svartvita ränder?",
+		"answer1": u"Fröken Zebra",
+	   	"answer2": u"Fru Leopard",
+	    "answer3": u"Lilla Björn",
 	    "quiz_slug": slug,
 	}
 	return render(request, "quiz/monstermastaren1.html", context)

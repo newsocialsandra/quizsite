@@ -17,20 +17,17 @@
     </div>
   </div>
 </div>
-<h1>{{ question_number }}. {{ question }}</h1>
-  <p>{{ answer1 }}</p>
-  <p>{{ answer2 }}</p>
-  <p>{{ answer3 }}</p>
-<p>Vem går klädd i svartvita ränder?</p>
+<p>{{ question_number }}. {{ question }}</p>
+  <form action="">
+  <input type="radio" name="answer" value="male">{{ answer1 }}<br>
+  <input type="radio" name="answer" value="female">{{ answer2 }}<br>
+  <input type="radio" name="answer" value="female">{{ answer3 }}<br>
+  </form>
 <br>
 <img src="/static/zebra.jpg" alt="zebramönster" width="600">
 <br>
 <br>
-<form action="">
-<input type="radio" name="answer" value="male">Herr Zebra<br>
-<input type="radio" name="answer" value="female">Fröken Leopard<br>
-<input type="radio" name="answer" value="female">Lilla Björn<br>
-</form>
+
 <br>
 <form action="resultat.html">
   <input type="submit" value="RÄTTA">
