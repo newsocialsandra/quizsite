@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+# coding: utf-8
 # Create your views here.
 def startpage(request):
 	return render(request, "quiz/startpage.html")

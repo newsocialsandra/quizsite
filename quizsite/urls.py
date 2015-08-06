@@ -1,30 +1,8 @@
-"""quizsite URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add an import:  from blog import urls as blog_urls
-    2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
-"""
-from django.conf.urls import include, url
-from django.contrib import admin
-
-urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-]
-
 from django.conf.urls import url
 from quiz import views
 urlpatterns = [
 	url("^$", views.startpage),
-	url(r"^quiz/[a-z-]+/$", views.monstermastaren),
-	url(r"^quiz/[a-z-]+/question/[0-9]/$", views.monstermastaren1),
-	url(r"^quiz/[a-z-]+/completed/$", views.resultat),
+	url(r"^quiz/[a-z-]+/$", views.quiz),
+	url(r"^quiz/[a-z-]+/question/[0-9]/$", views.question),
+	url(r"^quiz/[a-z-]+/completed/$", views.completed),
 ]
