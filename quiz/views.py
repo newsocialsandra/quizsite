@@ -22,8 +22,12 @@ def startpage(request):
 		"quizzes": quizzes,
 	}
 	return render(request, "quiz/startpage.html", context)
-def quiz(request):
-	return render(request, "quiz/monstermastaren.html")
+def quiz(request, slug):
+	context = {
+		"quiz": quizzes[slug],
+		"quiz_slug": slug,
+	}
+	return render(request, "quiz/monstermastaren.html", context)
 def question(request):
 	return render(request, "quiz/monstermastaren1.html")
 def completed(request):
