@@ -11,8 +11,7 @@ def startpage(request):
 	return render(request, "quiz/startpage.html", context)
 def quiz(request, slug):
 	context = {
-		"quiz": quizzes[slug],
-		"quiz_slug": slug,
+		"quiz": Quiz.objects.get(slug=slug),
 	}
 	return render(request, "quiz/monstermastaren.html", context)
 def question(request, slug, number):
