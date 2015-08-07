@@ -20,8 +20,23 @@ def question(request, slug, number):
 	number = int(number)
 	quiz = Quiz.objects.get(slug=slug)
 	questions = quiz.questions.all()
-	if number > questions.count():
-		return redirect("completed_page", quiz.slug)
+	if request.POST:
+    	answer = int(request.POST["answer"])
+
+    	saved_answers = {}
+	if quiz.slug in request.session:
+		saved_answers = request.session[quiz.slug]
+
+    	saved_answers[str(number)] = answer
+    	request.session[quiz.slug] = saved_answers
+
+    	if questions.count() == number:
+        		return redirect("completed_page", quiz.slug)
+    	else:
+       		return redirect("question_page", quiz.slug, number +1)
+
+	# if number > questions.count():
+	# 	return redirect("completed_page", quiz.slug)
 	question = questions[number - 1]
 	context = {
 		"question_number": number,
