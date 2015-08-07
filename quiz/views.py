@@ -15,13 +15,17 @@ def quiz(request, slug):
 	}
 	return render(request, "quiz/monstermastaren.html", context)
 def question(request, slug, number):
+	number = int(number)
+	quiz = Quiz.objects.get(slug=slug)
+	questions = quiz.questions.all()
+	question = questions[number - 1]
 	context = {
 		"question_number": number,
-		"question": u"Vem går klädd i svartvita ränder?",
-		"answer1": u"Fröken Zebra",
-	   	"answer2": u"Fru Leopard",
-	    "answer3": u"Lilla Björn",
-	    "quiz_slug": slug,
+		"question": question.question,
+		"answer1": question.answer1,
+	   	"answer2": question.answer2,
+	    "answer3": question.answer3,
+	    "quiz": quiz,
 	}
 	return render(request, "quiz/monstermastaren1.html", context)
 def completed(request, slug):
