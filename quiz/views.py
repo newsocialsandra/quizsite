@@ -23,7 +23,15 @@ def quiz(request, slug):
 	return render(request, "quiz/monstermastaren.html", context)
 def question(request, slug, number):
 	number = int(number)
-	quiz = Quiz.objects.get(slug=slug)
+	try:
+		quiz = Quiz.objects.get(slug=slug)
+	except Quiz.DoesNotExist:
+		raise Http404
+
+	context = {
+	"quiz": quiz,
+	}
+
 	questions = quiz.questions.all()
 	if request.POST:
 		answer = int(request.POST["answer"])
