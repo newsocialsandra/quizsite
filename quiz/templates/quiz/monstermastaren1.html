@@ -11,7 +11,7 @@
   <h1>VEM FINNS PÅ BILDEN?</h1>
   <div class="container">
     <div class="row">
-      <div class="column"><a href="startpage.html">ALLA QUIZ</a></div>
+      <div class="column"><a href="{% url "start_page" %}">ALLA QUIZ</a></div>
       <div class="column"><a href="random.html">RANDOM QUIZ</a></div>
       <div class="column"><a href="LINK">KONTAKT</a></div>
     </div>
@@ -36,11 +36,11 @@
     {{ answer3 }}
   </label>
 <br>
+<br>
+<input type="submit" value="NÄSTA FRÅGA">
+<br>
 </form>
 <br>
-<form action="{% url "question_page" quiz.slug question_number|add:1 %}">
-  <input type="submit" value="NÄSTA FRÅGA">
-</form>
 <br>
 <br>
 <p id="copyright">Skapad av Sandra Svensson 2015.</p>
