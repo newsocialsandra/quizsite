@@ -1,5 +1,5 @@
 # coding: utf-8
-
+from django.http import Http404
 from django.shortcuts import render
 from quiz.models import Quiz
 from django.shortcuts import redirect
@@ -12,8 +12,13 @@ def startpage(request):
 	}
 	return render(request, "quiz/startpage.html", context)
 def quiz(request, slug):
+	try:
+		quiz = Quiz.objects.get(slug=slug)
+	except Quiz.DoesNotExist:
+		raise Http404
+
 	context = {
-		"quiz": Quiz.objects.get(slug=slug),
+			"quiz": quiz,
 	}
 	return render(request, "quiz/monstermastaren.html", context)
 def question(request, slug, number):
