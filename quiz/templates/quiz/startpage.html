@@ -22,6 +22,8 @@
      <p><li><a href="{% url "quiz_page" quiz.slug %}">
     {{ quiz.name }}
   </a></li></p>
+{% empty %}
+<p><em>Det finns inga frågesporter ännu.</em></p>
 {% endfor %}
 <br>
 <img src="/static/flamingo.jpg" alt="Pink flamingos" width="600">
