@@ -8,7 +8,7 @@ class Quiz(models.Model):
 	def __unicode__(self):
 		return self.name
 class Question(models.Model):
-	quiz = models.ForeignKey(Quiz)
+	quiz = models.ForeignKey(Quiz, related_name="questions")
 	question = models.TextField()
 	answer1 = models.CharField(max_length=100)
 	answer2 = models.CharField(max_length=100)

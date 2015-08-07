@@ -17,22 +17,17 @@
     </div>
   </div>
 </div>
+<img src="/static/zebra.jpg" alt="zebramönster" width="600">
 <p>{{ question_number }}. {{ question }}</p>
   <form action="">
-  <input type="radio" name="answer" value="male">{{ answer1 }}<br>
-  <input type="radio" name="answer" value="female">{{ answer2 }}<br>
-  <input type="radio" name="answer" value="female">{{ answer3 }}<br>
+  <input type="radio" name="answer" value="1">{{ answer1 }}<br>
+  <input type="radio" name="answer" value="2">{{ answer2 }}<br>
+  <input type="radio" name="answer" value="3">{{ answer3 }}<br>
   </form>
 <br>
-<img src="/static/zebra.jpg" alt="zebramönster" width="600">
-<br>
-<br>
-
-<br>
-<form action="resultat.html">
+<form action="{% url "completed_page" quiz_slug %}">
   <input type="submit" value="RÄTTA">
 </form>
-<p><a href="{% url "completed_page" quiz_slug %}">Nästa</a></p>
 <br>
 <br>
 <p id="copyright">Skapad av Sandra Svensson 2015.</p>

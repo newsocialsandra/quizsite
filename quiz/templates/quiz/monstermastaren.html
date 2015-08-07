@@ -23,10 +23,9 @@
 <img src="/static/pasukaru76.jpg" alt="Pink flamingos" width="600">
 <br>
 <p>Känn igen djuret på dess mönster.</p>
-<form action="monstermastaren1.html">
+<form action="{% url "question_page" quiz_slug 1 %}">
   <input type="submit" value="STARTA QUIZET">
 </form>
-<p><a href="{% url "question_page" quiz_slug 1 %}">Starta</a></p>
 <br>
 <p id="copyright">Skapad av Sandra Svensson 2015.</p>
 </body>
