@@ -19,7 +19,8 @@
 </div>
 <img src="/static/zebra.jpg" alt="zebramönster" width="600">
 <p>{{ question_number }}. {{ question }}</p>
-  <form action="">
+  <form action="{% url "question_page" quiz.slug question_number %}" method="post">
+  {% csrf_token %}
   <input type="radio" name="answer" value="1">{{ answer1 }}<br>
   <input type="radio" name="answer" value="2">{{ answer2 }}<br>
   <input type="radio" name="answer" value="3">{{ answer3 }}<br>
