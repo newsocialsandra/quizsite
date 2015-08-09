@@ -61,7 +61,14 @@ def question(request, slug, number):
 	}
 	return render(request, "quiz/monstermastaren1.html", context)
 def completed(request, slug):
-	quiz = Quiz.objects.get(slug=slug)
+	try:
+		quiz = Quiz.objects.get(slug=slug)
+	except Quiz.DoesNotExist:
+		raise Http404
+
+	context = {
+	"quiz": quiz,
+	}
 	questions = quiz.questions.all()
 	saved_answers = request.session[slug]
 	num_correct_answers = 0
