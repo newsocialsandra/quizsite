@@ -25,7 +25,7 @@ SECRET_KEY = '*6&vf4j(+iyf+_q*bc1ktn(xb7t!^+%uu^fd!6nni5_^8+idk-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djurspanaren.heroku.com']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'quizsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['404.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
