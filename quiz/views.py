@@ -6,7 +6,6 @@ from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-
 # Create your views here.
 def startpage(request):
 	context = {
@@ -85,7 +84,10 @@ def completed(request, slug):
 		"quiz": quiz,
 		}
 	return render(request, "quiz/resultat.html", context)
-
+def contact(request):
+	return render(request, "quiz/kontakt.html")
+def random(request):
+	return render(request, "quiz/random.html")
 def handler404(request):
 	response = render_to_response('404.html', {},
 		context_instance=RequestContext(request))
