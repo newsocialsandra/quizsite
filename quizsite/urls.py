@@ -9,4 +9,5 @@ urlpatterns = [
 	url(r"^quiz/([a-z-]+)/completed/$", views.completed, name="completed_page"),
 	url(r'^admin/', include(admin.site.urls)),
 ]
-handler404 = 'app.views.custom_404'
+
+handler404 = 'mysite.views.my_custom_page_not_found_view'
