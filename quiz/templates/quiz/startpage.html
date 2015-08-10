@@ -11,13 +11,14 @@
 <div class="container">
   <div class="row">
     <div class="column"><a href="{% url "start_page" %}">ALLA QUIZ</a></div>
-    <div class="column"><a href="random.html">RANDOM QUIZ</a></div>
-    <div class="column"><a href="kontakt.html">KONTAKT</a></div>
+    <div class="column"><a href="link">RANDOM QUIZ</a></div>
+    <div class="column"><a href="link">KONTAKT</a></div>
   </div>
 </div>
 <p>Kan du känna igen djuret, fågeln eller fisken på hens mönster, nos eller tassar? Briljera som djurspanare i ett klurigt bildquiz. </p>
 <br>
 <h2>Välj ett quiz:</h2>
+<p>(Hett tips: välj Mönstermästaren. Lite pga. att det är det enda som fungerar ännu, lite pga... nä, det var nog bara pga det.)
 {% for quiz in quizzes %}
      <p><li><a href="{% url "quiz_page" quiz.slug %}">
     {{ quiz.name }}
