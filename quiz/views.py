@@ -22,7 +22,7 @@ def quiz(request, slug):
 	context = {
 			"quiz": quiz,
 	}
-	return render(request, "quiz/monstermastaren.html", context)
+	return render(request, "quiz/quiz.html", context)
 def question(request, slug, number):
 	number = int(number)
 	try:
@@ -61,7 +61,7 @@ def question(request, slug, number):
 		"answer3": question.answer3,
 		"quiz": quiz,
 	}
-	return render(request, "quiz/monstermastaren1.html", context)
+	return render(request, "quiz/question.html", context)
 def completed(request, slug):
 	try:
 		quiz = Quiz.objects.get(slug=slug)

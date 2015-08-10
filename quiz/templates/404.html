@@ -15,16 +15,8 @@
     <div class="column"><a href="kontakt.html">KONTAKT</a></div>
   </div>
 </div>
-<p>Kan du känna igen djuret, fågeln eller fisken på hens mönster, nos eller tassar? Briljera som djurspanare i ett klurigt bildquiz. </p>
+<p>Ojdå! Sidan du söker finns visst inte :( </p>
 <br>
-<h2>Välj ett quiz:</h2>
-{% for quiz in quizzes %}
-     <p><li><a href="{% url "quiz_page" quiz.slug %}">
-    {{ quiz.name }}
-  </a></li></p>
-{% empty %}
-<p><em>Det finns inga frågesporter ännu.</em></p>
-{% endfor %}
 <br>
 <p id="copyright">Skapad av Sandra Svensson 2015.</p>
 </body>
