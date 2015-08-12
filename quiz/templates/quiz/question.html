@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-<img src="/static/zebra.jpg" alt="zebramönster" width="600">
+<img src="{{ imagelink }}" alt="secretanimal" width="600">
 <p>{{ question_number }}. {{ question }}</p>
   <form action="{% url "question_page" quiz.slug question_number %}" method="post">
   {% csrf_token %}
