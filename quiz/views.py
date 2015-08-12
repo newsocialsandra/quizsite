@@ -59,6 +59,7 @@ def question(request, slug, number):
 		"answer2": question.answer2,
 		"answer3": question.answer3,
 		"quiz": quiz,
+		"imagelink": question.imagelink,
 	}
 	return render(request, "quiz/question.html", context)
 def completed(request, slug):
