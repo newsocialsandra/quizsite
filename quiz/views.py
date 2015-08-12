@@ -44,15 +44,13 @@ def question(request, slug, number):
 
 		saved_answers[str(number)] = answer
 		request.session[quiz.slug] = saved_answers
-		print number
-		print questions.count()
 		if questions.count() == number:
 			return redirect("completed_page", quiz.slug)
 		else:
 			return redirect("question_page", quiz.slug, number +1)
-			
-	# if number > questions.count():
-	# 	raise Http404	
+
+	if number > questions.count():
+		raise Http404	
 	
 	context = {
 		"question_number": number,
