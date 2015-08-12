@@ -34,6 +34,7 @@ def question(request, slug, number):
 	}
 
 	questions = quiz.questions.all()
+	question = questions[number - 1]
 	if request.POST:
 		answer = int(request.POST["answer"])
 
@@ -49,9 +50,10 @@ def question(request, slug, number):
 			return redirect("completed_page", quiz.slug)
 		else:
 			return redirect("question_page", quiz.slug, number +1)
-	if number > questions.count():
-		raise Http404	
-	question = questions[number - 1]
+			
+	# if number > questions.count():
+	# 	raise Http404	
+	
 	context = {
 		"question_number": number,
 		"question": question.question,
