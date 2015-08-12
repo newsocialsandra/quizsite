@@ -9,6 +9,7 @@ class Quiz(models.Model):
 		return self.name
 class Question(models.Model):
 	quiz = models.ForeignKey(Quiz, related_name="questions")
+	imagelink = models.CharField(max_length=250)
 	question = models.TextField()
 	answer1 = models.CharField(max_length=100)
 	answer2 = models.CharField(max_length=100)
