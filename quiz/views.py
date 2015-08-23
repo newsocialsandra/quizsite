@@ -5,6 +5,10 @@ from quiz.models import Quiz
 from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from quiz.forms import ContactForm
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from django.template import Context
 
 # Create your views here.
 def startpage(request):
@@ -86,8 +90,52 @@ def completed(request, slug):
 		}
 	return render(request, "quiz/resultat.html", context)
 
+# def contact(request):
+# 	form_class = ContactForm
+
+# 	return render(request, "quiz/kontakt.html", {
+# 		"form": form_class,
+# 		})
+
 def contact(request):
-	return render(request, "quiz/kontakt.html")
+	form_class = ContactForm
+
+	# new logic!
+	if request.method == 'POST':
+		form = form_class(data=request.POST)
+
+		if form.is_valid():
+			contact_name = request.POST.get(
+				'contact_name'
+			, '')
+			contact_email = request.POST.get(
+				'contact_email'
+			, '')
+			form_content = request.POST.get('content', '')
+
+			# Email the profile with the 
+			# contact information
+			template = get_template('contact_template.txt')
+			context = Context({
+				'contact_name': contact_name,
+				'contact_email': contact_email,
+				'form_content': form_content,
+			})
+			content = template.render(context)
+
+			email = EmailMessage(
+				"New contact form submission",
+				content,
+				"Your website" +'<hi@weddinglovely.com>',
+				['youremail@gmail.com'],
+				headers = {'Reply-To': contact_email }
+			)
+			email.send()
+			return redirect('contact_page')
+
+	return render(request, 'quiz/kontakt.html', {
+		'form': form_class,
+	})
 
 def random(request):
 	return render(request, "quiz/random.html")

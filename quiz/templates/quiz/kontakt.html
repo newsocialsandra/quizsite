@@ -20,7 +20,14 @@
 <img src="/static/flamingo.jpg" alt="Pink flamingos" width="600">
 <br>
 <p>Här kan du ställa frågor om quizen, skriva kommentarer eller bjussa på hinkvis med beröm.</p>
-<form action="MAILTO:svensean@gmail.com" method="post" enctype="text/plain">
+
+<form role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Skicka</button>
+</form>
+
+<!-- <form action="MAILTO:svensean@gmail.com" method="post" enctype="text/plain">
 Namn:<br>
 <input type="text" name="name" value="Ditt namn"><br>
 Mailadress:<br>
@@ -30,6 +37,7 @@ Kommentar:<br>
 <input type="submit" value="Skicka">
 <input type="reset" value="Börja om">
 </form>
+ -->
 <br>
 <br>
 <p id="copyright">Skapad av <a href="https://github.com/newsocialsandra" target="_blank">newsocialsandra</a>.</p>
