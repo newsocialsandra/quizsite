@@ -5,20 +5,20 @@
   <meta http-equiv="Content-Language" content="sv">
   <title>DJURSPANAREN</title>
   <link rel="stylesheet" href="normalize.css"> 
-  <link rel="stylesheet" href="quiz.css"> 
+  <link rel="stylesheet" href="/static/quiz.css"> 
   </head>
 <body>
 <h1>VEM FINNS PÅ BILDEN?</h1>
 <div class="container">
   <div class="row">
-    <div class="column"><a href="quizstart.html">ALLA QUIZ</a></div>
-    <div class="column"><a href="LINK">RANDOM QUIZ</a></div>
-    <div class="column"><a href="kontakt.html">KONTAKT</a></div>
+    <div class="column"><a href="{% url "start_page" %}">ALLA QUIZ</a></div>
+    <div class="column"><a href="{% url "random_page" %}">RANDOM QUIZ</a></div>
+    <div class="column"><a href="{% url "contact_page" %}">KONTAKT</a></div>
   </div>
 </div>
-<h2>Ojdå!</h2>
-<p>Randomfunktionen fungerar visst inte. Vi lagar den med plåster och tejp så snart vi kan. Välj <a href="startpage.html">ett annat quiz</a> medan du väntar. </p>
-<img src="/static/flamingo.jpg" alt="Pink flamingos" width="600">
+<h2>BYGGE PÅGÅR!</h2>
+<p>Randomfunktionen är inte färdig än. Lämna namn och e-postadress i <a href="{% url "contact_page" %}"> kontaktformuläret</a>, så bjuder vi in till storslagen releasefest när den är här. </p>
+<img src="/static/sengangare.jpg" alt="sloth" width="600">
 <br>
 <br>
 <p id="copyright">Skapad av Sandra Svensson 2015.</p>
