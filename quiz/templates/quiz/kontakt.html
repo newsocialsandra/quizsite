@@ -12,13 +12,13 @@
   <div class="row">
     <div class="column"><a href="{% url "start_page" %}">ALLA QUIZ</a></div>
     <div class="column"><a href="random.html">RANDOM QUIZ</a></div>
-    <div class="column"><a href="kontakt.html">KONTAKT</a></div>
+    <div class="column"><a href="{% url "contact_page" %}">KONTAKT</a></div>
   </div>
 </div>
+<h2>Kontakt</h2>
 <img src="/static/flamingo.jpg" alt="Pink flamingos" width="600">
 <br>
-<p>Större skata? Flamingo? Laxfärgad katt med fjädrar?</p>
-<p>Vad tror du? Skriv din bästa gissning! Du kan också ställa frågor om quizen, skriva kommentarer eller bjussa på hinkvis med beröm.</p>
+<p>Här kan du ställa frågor om quizen, skriva kommentarer eller bjussa på hinkvis med beröm.</p>
 <form action="MAILTO:svensean@gmail.com" method="post" enctype="text/plain">
 Namn:<br>
 <input type="text" name="name" value="Ditt namn"><br>

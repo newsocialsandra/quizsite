@@ -85,6 +85,10 @@ def completed(request, slug):
 		"quiz": quiz,
 		}
 	return render(request, "quiz/resultat.html", context)
+
+def contact(request):
+	return render(request, "quiz/kontakt.html")
+
 def handler404(request):
 	response = render_to_response('404.html', {},
 			context_instance=RequestContext(request))
