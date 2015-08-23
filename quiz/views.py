@@ -126,8 +126,8 @@ def contact(request):
 			email = EmailMessage(
 				"New contact form submission",
 				content,
-				"Your website" +'<hi@weddinglovely.com>',
-				['youremail@gmail.com'],
+				"Your website" +'<http://djurspanaren.herokuapp.com/>',
+				['svensean@gmail.com'],
 				headers = {'Reply-To': contact_email }
 			)
 			email.send()
